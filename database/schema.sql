@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS gaz_ppm_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE gaz_ppm_db;
+
+CREATE TABLE IF NOT EXISTS gas_measurements (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ppm DECIMAL(10,2) NOT NULL,
+    raw_value INT NOT NULL,
+    alarm TINYINT(1) NOT NULL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
